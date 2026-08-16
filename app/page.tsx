@@ -20,9 +20,16 @@ export default function Home() {
             I'm Ahmad Naufal, a performance marketer based in Indonesia. I've spent the last few years running Meta ads for brands across e-commerce, F&B, and services. Right now I manage 10+ client accounts with a combined Rp100 million in monthly ad spend.
           </p>
           <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-4">
-            {portfolioStats.map((s) => (
-              <StatTicker key={s.label} value={s.value} suffix={s.suffix} label={s.label} />
-            ))}
+           {portfolioStats.map((s, index) =>
+  s ? (
+    <StatTicker
+      key={s.label ?? index}
+      value={s.value}
+      suffix={s.suffix}
+      label={s.label}
+    />
+  ) : null
+)}
           </div>
         </div>
       </section>
