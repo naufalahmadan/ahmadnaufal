@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-ink text-paper font-body;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(243, 239, 228, 0.035) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+  ::selection {
+    background-color: #ff3d7f;
+    color: #12201c;
+  }
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid #ffc940;
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .stamp {
+    @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em];
+    transform: rotate(-3deg);
+  }
+  .stamp-magenta {
+    @apply stamp border-stamp/60 text-stamp;
+  }
+  .stamp-gold {
+    @apply stamp border-gold/60 text-gold;
+  }
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-muted;
+  }
+  .case-table {
+    @apply w-full border-collapse text-left text-sm;
+  }
+  .case-table th {
+    @apply border-b border-line pb-3 pr-4 font-mono text-[11px] uppercase tracking-wider text-muted;
+  }
+  .case-table td {
+    @apply border-b border-line/60 py-3 pr-4 font-mono text-[13px] text-paper/90;
+  }
+  .case-table tr:last-child td {
+    @apply border-b-0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
