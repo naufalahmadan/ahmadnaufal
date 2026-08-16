@@ -21,7 +21,7 @@ export default function Header() {
             More Clients
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:naufal14ahmad@gmail.com"
             className="rounded-full bg-stamp px-4 py-2 font-mono text-xs uppercase tracking-widest text-ink transition hover:bg-gold"
           >
             LET'S CONNECT
